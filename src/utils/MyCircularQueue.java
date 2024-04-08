@@ -1,24 +1,17 @@
-public class MyCircularDeque {
+package utils;
+
+public class MyCircularQueue {
     private final int[] data;
     private int capacity = 0;
     private int front = 0;
     private int rear = 0;
 
-    public MyCircularDeque(int k) {
+    public MyCircularQueue(int k) {
+        data = new int[k + 1];
         capacity = k + 1;
-        data = new int[capacity];
     }
 
-    public boolean insertFront(int value) {
-        if (isFull()) {
-            return false;
-        }
-        front = (front - 1 + capacity) % capacity;
-        data[front] = value;
-        return true;
-    }
-
-    public boolean insertLast(int value) {
+    public boolean enQueue(int value) {
         if (isFull()) {
             return false;
         }
@@ -27,7 +20,7 @@ public class MyCircularDeque {
         return true;
     }
 
-    public boolean deleteFront() {
+    public boolean deQueue() {
         if (isEmpty()) {
             return false;
         }
@@ -35,22 +28,14 @@ public class MyCircularDeque {
         return true;
     }
 
-    public boolean deleteLast() {
-        if (isEmpty()) {
-            return false;
-        }
-        rear = (rear - 1 + capacity) % capacity;
-        return true;
-    }
-
-    public int getFront() {
+    public int Front() {
         if (isEmpty()) {
             return -1;
         }
         return data[front];
     }
 
-    public int getRear() {
+    public int Rear() {
         if (isEmpty()) {
             return -1;
         }
@@ -58,7 +43,7 @@ public class MyCircularDeque {
     }
 
     public boolean isEmpty() {
-        return rear == front;
+        return front == rear;
     }
 
     public boolean isFull() {
