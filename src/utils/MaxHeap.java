@@ -18,6 +18,19 @@ public class MaxHeap implements Queue {
         this.data = new int[capacity + 1];
     }
 
+    public MaxHeap(int[] arr) {
+        size = capacity = arr.length;
+        data = new int[capacity + 1];
+        System.arraycopy(arr, 0, data, 1, size);
+//         自顶向下将数组整理成堆，效率较低O(NlogN)
+//        for (int i = 2; i <= size; i++) {
+//            siftUp(i);
+//        }
+//        自底向上将数组整理成堆，效率较高O(N)
+        for (int i = size / 2; i >= 1; i--) {
+            siftDown(i);
+        }
+    }
 
     @Override
     public boolean isEmpty() {
