@@ -3,7 +3,7 @@ package questions;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Twitter {
+class Twitter {
 
     public static void main(String[] args) {
         Twitter twitter = new Twitter();
@@ -39,10 +39,6 @@ public class Twitter {
 
     private final Map<Integer, Tweet> timelines = new HashMap<>();
     private final Map<Integer, Set<Integer>> followsMap = new HashMap<>();
-
-    public Twitter() {
-
-    }
 
     public void postTweet(int userId, int tweetId) {
         if (!timelines.containsKey(userId)) {
