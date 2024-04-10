@@ -3,7 +3,7 @@ package utils;
 import java.util.NoSuchElementException;
 
 public class MyArrayList<E> {
-    private static int DEFAULT_CAPACITY = 1;
+    private static final int DEFAULT_CAPACITY = 1;
     private E[] data;
     private int capacity = 0;
     private int size = 0;
