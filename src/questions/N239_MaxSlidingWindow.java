@@ -28,12 +28,7 @@ import java.util.LinkedList;
  * 输入：nums = [1], k = 1
  * 输出：[1]
  */
-class Solution {
-
-    public static void main(String[] args) {
-        Solution solution = new Solution();
-        System.out.println(Arrays.toString(solution.maxSlidingWindow(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3)));
-    }
+class SolutionN239 {
 
     public int[] maxSlidingWindow(int[] nums, int k) {
         int len = nums.length;

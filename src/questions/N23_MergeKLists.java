@@ -1,31 +1,23 @@
 package questions;
 
-import utils.SinglyLinkedList;
+import utils.ListNode;
 import utils.MinHeap;
 
 import java.util.Comparator;
 
-class Solution {
-    public static class LisNode {
-        public int val;
-        private LisNode next;
+class SolutionN23 {
 
-        LisNode(int val){
-            this.val = val;
-        }
-    }
-
-    public LisNode mergeKLists(LisNode[] lists) {
-        LisNode dump = new LisNode(-1);
-        LisNode curr = dump;
-        MinHeap<LisNode> minHeap = new MinHeap<>(lists.length, Comparator.comparingInt(node -> node.val));
-        for (LisNode node : lists) {
+    public ListNode mergeKLists(ListNode[] lists) {
+        ListNode dump = new ListNode(-1);
+        ListNode curr = dump;
+        MinHeap<ListNode> minHeap = new MinHeap<>(lists.length, Comparator.comparingInt(node -> node.val));
+        for (ListNode node : lists) {
             if (node != null) {
                 minHeap.offer(node);
             }
         }
         while (!minHeap.isEmpty()) {
-            LisNode top = minHeap.peek();
+            ListNode top = minHeap.peek();
             curr.next = top;
             curr = top;
             if (top.next == null) {

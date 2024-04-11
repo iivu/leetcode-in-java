@@ -1,19 +1,9 @@
 package questions;
 
-import java.util.Arrays;
 import java.util.Random;
 
-class Test {
-    public static void main(String[] args) {
-        Solution1 solution = new Solution1();
-        int[] arr = new int[]{5, 2, 3, 1};
-        solution.sortArray(arr);
-        System.out.println(Arrays.toString(arr));
-    }
-}
-
 // 堆排序
-class Solution1 {
+class SolutionN912_1 {
     public int[] sortArray(int[] nums) {
         heapify(nums);
         for (int i = nums.length - 1; i > 0; i--) {
@@ -53,17 +43,17 @@ class Solution1 {
 }
 
 // 选择排序
-class Solution2 {
+class SolutionN912_2 {
     public int[] sortArray(int[] nums) {
         int len = nums.length;
         for (int i = 0; i < len - 1; i++) {
             int minIndex = i;
-            for (int j = i + 1; j < len; j++ ) {
+            for (int j = i + 1; j < len; j++) {
                 if (nums[j] < nums[minIndex]) {
                     minIndex = j;
                 }
             }
-            swap(nums,i,minIndex);
+            swap(nums, i, minIndex);
         }
         return nums;
     }
@@ -76,7 +66,7 @@ class Solution2 {
 }
 
 // 冒泡排序
-class Solution3 {
+class SolutionN912_3 {
     public int[] sortArray(int[] nums) {
         int len = nums.length;
         for (int i = 0; i < len - 1; i++) {
@@ -97,7 +87,7 @@ class Solution3 {
 }
 
 // 归并排序
-class Solution4 {
+class SolutionN912_4 {
     public int[] sortArray(int[] nums) {
         mergeSort(nums, 0, nums.length - 1);
         return nums;
@@ -141,7 +131,7 @@ class Solution4 {
 }
 
 // 快速排序（数组越有序，效果越差）
-class Solution5 {
+class SolutionN912_5 {
     public int[] sortArray(int[] nums) {
         quickSort(nums, 0, nums.length - 1);
         return nums;
@@ -180,7 +170,7 @@ class Solution5 {
 }
 
 // 快速排序（双指针优化）
-class Solution6 {
+class SolutionN912_6 {
     public int[] sortArray(int[] nums) {
         quickSort(nums, 0, nums.length - 1);
         return nums;
@@ -228,7 +218,7 @@ class Solution6 {
 }
 
 // 快速排序（双指针优化，随机pivot）
-class Solution7 {
+class SolutionN912_7 {
     public Random random = new Random();
 
     public int[] sortArray(int[] nums) {
@@ -284,7 +274,7 @@ class Solution7 {
 }
 
 // 计数排序，需要注意元素中有负数的情况（log（N+K））
-class Solution8 {
+class SolutionN912_8 {
     public int[] sortArray(int[] nums) {
         countSort(nums);
         return nums;
@@ -319,7 +309,7 @@ class Solution8 {
 }
 
 // 基数排序，基于计数排序
-class Solution9 {
+class SolutionN912_9 {
     public int[] sortArray(int[] nums) {
         int maxAbs = 0;
         for (int num : nums) {
@@ -377,7 +367,7 @@ class Solution9 {
 }
 
 // 桶排序
-class Solution10 {
+class SolutionN912_10 {
     public int[] sortArray(int[] nums) {
         bucketSort(nums);
         return nums;
