@@ -9,7 +9,9 @@ import java.util.List;
  * <p>
  * 解集 不能 包含重复的子集。你可以按 任意顺序 返回解集。
  */
-class SolutionN78 {
+
+// 「盒」视角，穷举每个位置可以放什么「球」
+class SolutionN78_1 {
     private final List<List<Integer>> ans = new LinkedList<>();
     private final List<Integer> track = new LinkedList<>();
 
@@ -29,5 +31,19 @@ class SolutionN78 {
             // 撤销选择
             track.removeLast();
         }
+    }
+}
+
+// 「球」视角，「球」可以穷举自己可以在什么位置
+class SolutionN78_2 {
+    private final List<List<Integer>> ans = new LinkedList<>();
+
+    public List<List<Integer>> subsets(int[] nums) {
+        backtrace(nums);
+        return ans;
+    }
+
+    private void backtrace(int[] nums) {
+
     }
 }
