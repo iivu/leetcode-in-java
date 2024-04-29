@@ -12,6 +12,7 @@ import java.util.PriorityQueue;
 
 class SolutionN378 {
 
+    // 合并K个有序链表思想
     public int kthSmallest(int[][] matrix, int k) {
         int ans = -1;
         PriorityQueue<int[]> queue = new PriorityQueue<>(Comparator.comparingInt(a -> a[0]));
