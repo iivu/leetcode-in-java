@@ -16,7 +16,7 @@ class SolutionN360 {
             int vr = f(nums[r],a,b,c);
             if (a > 0) {
                 // 函数图像开口朝上，越靠近对称轴，值越小
-                if (Math.abs(nums[l]) >= Math.abs(nums[r])) {
+                if (vl >= vr) {
                     ans[p] = vl;
                     l++;
                 } else {
@@ -26,7 +26,7 @@ class SolutionN360 {
                 p--;
             } else {
                 // 函数图像开口朝下，越靠近对称轴，值越大
-                if (Math.abs(nums[l]) >= Math.abs(nums[r])) {
+                if (vl >= vr) {
                     ans[p] = vr;
                     r--;
                 } else {
