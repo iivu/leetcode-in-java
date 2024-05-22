@@ -13,11 +13,6 @@ import java.util.Map;
  * 请你返回「表现良好时间段」的最大长度。
  */
 class SolutionN1124 {
-    public static void main(String[] args) {
-        SolutionN1124 s = new SolutionN1124();
-        int[] test = new int[]{6,6,9};
-        System.out.println(s.longestWPI(test));
-    }
     public int longestWPI(int[] hours) {
         int len = hours.length;
         int[] preSum = new int[len + 1];
