@@ -9,19 +9,12 @@ package questions;
  */
 class SolutionN1736 {
     public String maximumTime(String time) {
-        char[] timeChars = time.toCharArray();
-        if (timeChars[0] == '?') {
-            timeChars[0] = timeChars[1] == '?' ? '2' : ( timeChars[1] >= '4' ? '1' : '2' );
-        }
-        if (timeChars[1] == '?') {
-            timeChars[1] = timeChars[0] < '2' ? '9' : '3';
-        }
-        if (timeChars[3] == '?') {
-            timeChars[3] = '5';
-        }
-        if (timeChars[4] == '?') {
-            timeChars[4] = '9';
-        }
-        return new String(timeChars);
+        StringBuilder sb = new StringBuilder();
+        sb.append(time.charAt(0) == '?' ? (time.charAt(1) == '?' ? '2' : time.charAt(1) >= '4' ? '1' : '2') : time.charAt(0));
+        sb.append(time.charAt(1) == '?' ? (time.charAt(0) < '2' ? '9' : '3') : time.charAt(1));
+        sb.append(':');
+        sb.append(time.charAt(3) == '?' ? '5' : time.charAt(3));
+        sb.append(time.charAt(4) == '?' ? '9' : time.charAt(4));
+        return sb.toString();
     }
 }
