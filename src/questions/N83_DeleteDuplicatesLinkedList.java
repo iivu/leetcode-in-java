@@ -16,7 +16,7 @@ import utils.ListNode;
  * -100 <= Node.val <= 100
  * 题目数据保证链表已经按升序 排列
  */
-class SolutionN83 {
+class SolutionN83_1 {
     public ListNode deleteDuplicates(ListNode head) {
         if(head == null || head.next == null) {
             return head;
@@ -31,5 +31,22 @@ class SolutionN83 {
         }
         slow.next = null;
         return head;
+    }
+}
+
+// 递归解法
+class SolutionN83_2 {
+    public ListNode deleteDuplicates(ListNode head) {
+        if(head == null || head.next == null) {
+            return head;
+        }
+        if (head.val != head.next.val) {
+            head.next = deleteDuplicates(head.next);
+            return head;
+        }
+        while (head.next != null && head.val == head.next.val) {
+            head = head.next;
+        }
+        return deleteDuplicates(head);
     }
 }
