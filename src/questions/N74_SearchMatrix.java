@@ -10,7 +10,7 @@ class SolutionN74 {
             if (get(matrix, mid) == target) {
                 return true;
             }
-            if (get(matrix,mid) > target) {
+            if (get(matrix, mid) > target) {
                 r = mid - 1;
             } else {
                 l = mid + 1;
