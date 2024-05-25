@@ -1,11 +1,6 @@
 package utils;
 
 public final class RobinKarp {
-
-    public static void main(String[] args) {
-        System.out.println(RobinKarp.search("Hello World.", "or"));
-    }
-
     private static final int Q = 1658598167;
     private static final int R = 256;
 
