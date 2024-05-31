@@ -3,11 +3,16 @@ package questions;
 import utils.ListNode;
 
 import java.util.HashMap;
-import java.util.List;
+
 import java.util.Map;
 
+/**
+ * 给定一个链表的第一个节点 head ，找到链表中所有出现多于一次的元素，并删除这些元素所在的节点。
+ * <p>
+ * 返回删除后的链表。
+ */
 class SolutionN1836 {
-    public ListNode deleteDuplicates(ListNode head) {
+    public ListNode deleteDuplicatesUnsorted(ListNode head) {
         Map<Integer, Integer> count = new HashMap<>();
         ListNode p = head;
         while (p != null) {
