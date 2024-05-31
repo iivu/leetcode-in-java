@@ -31,8 +31,8 @@ class SolutionN215 {
     private int partition(int[] nums, int lo, int hi) {
         int pivot = nums[lo];
 //        int pivot = randomPivot(nums, lo, hi);
-        // [lo,i) < pivot,[i,j] == pivot, (j,hi] > pivot
-        int i = lo, j = hi;
+        // [lo,i) <= pivot, (j,hi] >= pivot
+        int i = lo + 1, j = hi;
         while (true) {
             while (i <= j && nums[i] < pivot) {
                 i++;
