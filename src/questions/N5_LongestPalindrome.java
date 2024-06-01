@@ -6,7 +6,9 @@ class SolutionN5 {
 
     public String longestPalindrome(String s) {
         for (int i = 0; i < s.length(); i++) {
+            // 奇数个数回文
             palindrome(s, i, i);
+            // 偶数个数回文
             palindrome(s, i, i + 1);
             if (max == s.length()) {
                 return s.substring(start, start + max);
