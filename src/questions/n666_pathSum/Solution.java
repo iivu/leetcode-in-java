@@ -44,12 +44,12 @@ public class Solution {
         path -= values.get(root);
     }
 
-    // num -> [depth, position]
+    // code -> [depth, position]
     private int[] decode(int code) {
         return new int[]{code / 10, code % 10};
     }
 
-    // [depth, position] -> num
+    // [depth, position] -> code
     private int encode(int depth, int position) {
         return depth * 10 + position;
     }
