@@ -5,27 +5,6 @@ import java.util.Deque;
 
 public class MinStack {
 
-    public static void main(String[] args) {
-        MinStack ms = new MinStack();
-        ms.push(2147483646);
-        ms.push(2147483646);
-        ms.push(2147483647);
-        ms.top();
-        ms.pop();
-        ms.getMin();
-        ms.pop();
-        ms.getMin();
-        ms.pop();
-        ms.push(2147483647);
-        ms.top();
-        ms.getMin();
-        ms.push(-2147483648);
-        ms.top();
-        ms.getMin();
-        ms.pop();
-        ms.getMin();
-    }
-
     private final Deque<Long> diffStack = new ArrayDeque<>();
     private long minValue = -1;
 
