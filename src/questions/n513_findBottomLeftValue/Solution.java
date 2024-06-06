@@ -1,4 +1,4 @@
-package questions;
+package questions.n513_findBottomLeftValue;
 
 import utils.TreeNode;
 
@@ -7,7 +7,7 @@ import utils.TreeNode;
  * <p>
  * 假设二叉树中至少有一个节点。
  */
-public class n513_findBottomLeftValue {
+public class Solution {
     private int maxDepth = 0;
     private int currDepth = 0;
     private int ans = 0;
