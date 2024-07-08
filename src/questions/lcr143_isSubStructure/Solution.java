@@ -12,8 +12,8 @@ public class Solution {
         if (A == null || B == null) {
             return false;
         }
-        if (A.val == B.val) {
-            return check(A, B);
+        if (A.val == B.val && check(A, B)) {
+            return true;
         }
         return isSubStructure(A.left, B) || isSubStructure(A.right, B);
     }
