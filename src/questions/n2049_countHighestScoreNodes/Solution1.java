@@ -13,7 +13,7 @@ import java.util.Map;
  * 请你返回有 最高得分 节点的 数目 。
  */
 
-public class Solution {
+public class Solution1 {
     private static class TreeNode {
         private final int val;
         private final List<TreeNode> children = new ArrayList<>();
