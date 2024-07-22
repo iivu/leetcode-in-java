@@ -15,38 +15,37 @@ import java.util.*;
 // BFS
 public class Solution1 {
     public int openLock(String[] deadends, String target) {
-        Set<String> deads = new HashSet<>(List.of(deadends));
-        Set<String> q1 = new HashSet<>();
-        Set<String> q2 = new HashSet<>();
-        Set<String> visited = new HashSet<>();
-        int ans = 0;
-        q1.add("0000");
-        q2.add(target);
-        while (!q1.isEmpty() && !q2.isEmpty()) {
-            Set<String> temp = new HashSet<>();
-            for (String curr : q1) {
-                if (deads.contains(curr)) {
+        Queue<String> queue = new LinkedList<>();
+        Set<String> visited = new HashSet<>(Arrays.asList(deadends));
+        queue.offer("0000");
+        int step = 0;
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                String curr = queue.poll();
+                if (curr == null) {
                     continue;
                 }
-                if (q2.contains(curr)) {
-                    return ans;
+                if (visited.contains(curr)) {
+                    continue;
+                } else {
+                    visited.add(curr);
                 }
-                visited.add(curr);
-                for (int i = 0; i < 4; i++) {
-                    String up = this.up(curr, i);
-                    String down = this.down(curr, i);
+                if (curr.equals(target)) {
+                    return step;
+                }
+                for (int j = 0; j < 4; j++) {
+                    String up = up(curr, j);
+                    String down = down(curr, j);
                     if (!visited.contains(up)) {
-                        temp.add(up);
+                        queue.offer(up);
                     }
                     if (!visited.contains(down)) {
-                        temp.add(down);
+                        queue.offer(down);
                     }
                 }
-
             }
-            ans++;
-            q1 = q2;
-            q2 = temp;
+            step++;
         }
         return -1;
     }
