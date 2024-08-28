@@ -7,7 +7,7 @@ import utils.TreeNode;
  * 给定一个单链表的头节点  head ，其中的元素 按升序排序 ，将其转换为
  * 平衡二叉搜索树。
  */
-public class Solution {
+public class Solution1 {
     public TreeNode sortedListToBST(ListNode head) {
         if (head == null) {
             return null;
